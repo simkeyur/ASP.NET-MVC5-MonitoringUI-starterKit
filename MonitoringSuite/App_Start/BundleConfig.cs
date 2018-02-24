@@ -9,23 +9,47 @@ namespace MonitoringSuite
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Content/js/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                        "~/Content/js/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Content/js/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Content/js/bootstrap.min.js",
+                      "~/Content/js/respond.js"));
+            
+            //MorrisChartsJS
+            bundles.Add(new ScriptBundle("~/bundles/js/morrisCharts").Include(
+                      "~/Scripts/plugins/morris/morris.min.js",
+                      "~/Scripts/plugins/morris/raphael.min.js"));
 
+            //AngularJS
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                      "~/Content/js/angular.js"));
+
+            //Angular Controller
+            bundles.Add(new ScriptBundle("~/angular/drilldown-controller").Include(
+                      "~/Scripts/controller/drilldown.js"));
+
+            //Bootstrap CSS
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/css/bootstrap.min.css",
+                      "~/Content/css/monitoring.css",
+                      "~/Content/css/site.css"));
+
+            //MorrisCharts CSS
+            bundles.Add(new StyleBundle("~/Content/css/morrisCharts").Include(
+                      "~/Content/css/plugins/morris.css"));
+
+            //FontAwesome CSS
+            bundles.Add(new StyleBundle("~/Content/css/fontAwesome").Include(
+                      "~/Content/font-awesome.min.css",
+                      "~/Content/css/plugins/flag-icon.min.css"));
         }
     }
 }
